@@ -1,3 +1,4 @@
+
 function TelefoneCelular(ddd, numero) {
     this.ddd = ddd
     this.numero = numero
@@ -17,7 +18,8 @@ function TelefoneCelular(ddd, numero) {
     }
     
     this.getTelefoneCelularFormatado = function() {
-        return `DDD: ${this.ddd}\nNúmero: ${this.numero}`
+        return `DDD: ${this.ddd}
+Número: ${this.numero}`
     }
 }
 
@@ -56,7 +58,10 @@ function Endereco(rua, numero, cidade, estado) {
     }
     
     this.getEnderecoFormatado = function() {
-        return `Rua: ${this.rua}\nNúmero: ${this.numero}\nCidade: ${this.cidade}\nEstado: ${this.estado}`
+        return `Rua: ${this.rua}
+Número: ${this.numero}
+Cidade: ${this.cidade}
+Estado: ${this.estado}`
     }
 }
 
@@ -95,9 +100,22 @@ function Cliente(nome, telefoneCelular, email, endereco) {
     }
     
     this.getDetalhes = function() {
-        return `----------------------\nInformações do Cliente:\n${this.nome}\n----------------------\n----------------------\nTelefone:\n${this.telefoneCelular.getTelefoneCelularFormatado()}\n----------------------\nEndereço:\n${this.endereco.getEnderecoFormatado()}\n----------------------`
+        return `----------------------
+Informações do Cliente:
+${this.nome}
+----------------------
+----------------------
+Telefone:
+${this.telefoneCelular.getTelefoneCelularFormatado()}
+----------------------
+Endereço:
+${this.endereco.getEnderecoFormatado()}
+----------------------`
     }
 }
+
+
+
 
 function ordenarClientesPorNome(clientes) {
     return clientes.sort((a, b) => a.getNome().localeCompare(b.getNome()))
