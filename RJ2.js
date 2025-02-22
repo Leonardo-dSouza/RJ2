@@ -99,7 +99,36 @@ function Cliente(nome, telefoneCelular, email, endereco) {
         this.endereco = novoEndereco
     }
     
-    this.getDetalhes = function() {
+    this.getNomeMinusculo = function(){
+        return this.nome.toLowerCase()
+    }
+    
+    this.getNomeMaiusculo = function(){
+        return this.nome.toUpperCase()
+    }
+    
+    this.getEmailMinusculo = function(){
+        return this.email.toLowerCase()
+    }
+    
+    this.getEmailMaiusculo = function(){
+        return this.email.toUpperCase()
+    }
+    
+
+    this.getEnderecoMinusculo = function(){
+        return this.endereco.getEnderecoFormatado().toLowerCase()
+    }
+    
+    this.getEnderecoMaiusculo = function(){
+        return this.endereco.getEnderecoFormatado().toUpperCase()
+    }
+    
+    
+    
+    
+    
+    this.getDescricao = function() {
         return `----------------------
 Informações do Cliente:
 ${this.nome}
@@ -115,7 +144,7 @@ ${this.endereco.getEnderecoFormatado()}
 }
 
 
-
+// nomes.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
 function ordenarClientesPorNome(clientes) {
     return clientes.sort((a, b) => a.getNome().localeCompare(b.getNome()))
@@ -125,4 +154,7 @@ const telefone1 = new TelefoneCelular("11", "999999999")
 const endereco1 = new Endereco("Av. Paulista", 987, "São Paulo", "SP")
 const cliente1 = new Cliente("Carlos Conrado Heinz", telefone1, "carlos@email.com", endereco1)
 
-console.log(cliente1.getDetalhes())
+console.log(cliente1.getDescricao())
+console.log(cliente1.getNomeMinusculo())
+console.log(cliente1.getEnderecoMaiusculo())
+console.log(cliente1.getEnderecoMinusculo())
